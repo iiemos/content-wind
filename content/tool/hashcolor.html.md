@@ -3,7 +3,7 @@ title: '#FFF 哈希格式透明度参照表'
 keywords: '一朵大呲花,IT博客,技术博客,区块链博客'
 description: '哈希格式透明度参照表'
 
-layouts: 'markdown-full'
+layout: 'markdown-full'
 
 summary:
   title: '哈希格式透明度参照表'

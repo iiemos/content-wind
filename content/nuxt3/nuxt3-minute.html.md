@@ -3,7 +3,7 @@ title: 'Nuxt3 踩坑记录'
 keywords: '一朵大呲花,IT博客,技术博客,区块链博客'
 description: 'Nuxt3 踩坑记录'
 
-layouts: 'markdown-full'
+layout: 'markdown-full'
 
 summary:
   title: 'Nuxt3 踩坑记录'
