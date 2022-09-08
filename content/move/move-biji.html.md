@@ -3,7 +3,7 @@ title: 'Move 笔记'
 keywords: '一朵大呲花,IT博客,技术博客,区块链博客'
 description: 'Move 学习记录'
 
-layouts: 'markdown-full'
+layout: 'markdown-full'
 
 summary:
   title: 'Move 笔记'
