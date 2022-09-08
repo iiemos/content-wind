@@ -3,6 +3,8 @@ title: 'Electron vue-devtools 安装教程'
 keywords: '一朵大呲花,IT博客,技术博客,区块链博客'
 description: 'Electron vue-devtools 安装'
 
+layouts: 'markdown-full'
+
 summary:
   title: 'Electron vue-devtools 安装'
   type: 'Electron'

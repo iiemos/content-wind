@@ -3,7 +3,6 @@ import links from '@/data/links'
 const { linkSite, mirrorSite } = links
 </script>
 <template>
-  <!-- <NuxtLayout> -->
   <div :class="$style['iiemo_links']" class="container mx-auto mb-6 mt-10">
     <div :class="$style['_link_box']">
       <h1 :class="$style['_links_title']" class="text-xl font-semibold mb-10">友链<span class="text-sm ml-1">(9)</span></h1>
@@ -89,7 +88,6 @@ const { linkSite, mirrorSite } = links
       </div>
     </div>
   </div>
-  <!-- </NuxtLayout> -->
 </template>
 <style lang="scss" module>
 .iiemo_links {

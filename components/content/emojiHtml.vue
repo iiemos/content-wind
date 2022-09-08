@@ -26,11 +26,9 @@ useHead({
 })
 </script>
 <template>
-  <NuxtLayout>
-    <div :class="$style['_emoji_ctx']" class="mx-auto">
-      <span :class="$style['_emoji_item']" v-for="(item, idx) in keys" :key="idx" @click="copyEmoji(item)">{{ item }}</span>
-    </div>
-  </NuxtLayout>
+  <div :class="$style['_emoji_ctx']" class="mx-auto">
+    <span :class="$style['_emoji_item']" v-for="(item, idx) in keys" :key="idx" @click="copyEmoji(item)">{{ item }}</span>
+  </div>
 </template>
 <style lang="scss">
 .copTips {

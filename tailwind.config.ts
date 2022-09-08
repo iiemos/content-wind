@@ -10,7 +10,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: colors.gray,
+        primary: colors.zinc,
       },
       zIndex: {
         '-1': '-1',
@@ -34,10 +34,9 @@ export default {
               color: 'inherit',
               opacity: 0.75,
               fontWeight: '500',
-              textDecoration: 'underline',
+              textDecoration: 'inherit',
               '&:hover': {
                 opacity: 1,
-                color: colors.teal[600],
               },
             },
             b: { color: 'inherit' },

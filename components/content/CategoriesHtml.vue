@@ -11,7 +11,6 @@ data.value.forEach((i) => {
 }) // 获取type
 
 const newTypes = Array.from(new Set(types)) // 去重
-console.log('newTypes', newTypes)
 let typeList = newTypes.map((s) => {
   return { id: s, list: [] }
 })
@@ -30,10 +29,8 @@ useHead({
 })
 </script>
 <template>
-  <!-- <NuxtLayout> -->
-  <div :class="$style['_categs_ctx']" class="mx-auto shadow-lg">
+  <div :class="$style['_categs_ctx']" class="dark:bg-primary-800 mx-auto shadow-lg">
     <!-- 分类 -->
-    分类
     <el-timeline :class="$style['_categs_timeline']">
       <el-timeline-item v-for="item in typeList" :key="item.id" :timestamp="item.id" placement="top" size="normal" type="primary" :hollow="true">
         <nuxt-link v-for="itemlist in item.list" :key="itemlist._path" :to="itemlist._path" :class="$style['_categs_link']">
@@ -42,7 +39,6 @@ useHead({
       </el-timeline-item>
     </el-timeline>
   </div>
-  <!-- </NuxtLayout> -->
 </template>
 <style lang="scss" module>
 ._categs_ctx {

@@ -88,7 +88,6 @@ onUnmounted(() => {
 })
 </script>
 <template>
-  <!-- <NuxtLayout> -->
   <div :class="$style['iiemo_about']" class="container mx-auto mb-6">
     <h1 :class="$style['iiemo_about']" class="mb-6 text-4xl">
       {{ title }}
@@ -106,16 +105,15 @@ onUnmounted(() => {
         </div>
       </div>
     </div>
-    <div :class="$style['_my_info']" class="container mx-auto py-4">
-      <div :class="$style['_info_item']" class="my-4" v-for="mItem in myInfo" :key="mItem.title">
-        <div :class="$style['_info_item_tlt']" class="text-xl">
+    <div :class="$style['_my_info']" class="container mx-auto py-4 bg-lime-50 dark:bg-primary-800">
+      <div :class="$style['_info_item']" class="my-4 bg-lime-100 dark:bg-primary-600" v-for="mItem in myInfo" :key="mItem.title">
+        <div :class="$style['_info_item_tlt']" class="text-xl bg-lime-200 dark:bg-primary-700">
           {{ mItem.title }}
         </div>
         <div :class="$style['_info_item_ctx']" class="" v-html="mItem.desc"></div>
       </div>
     </div>
   </div>
-  <!-- </NuxtLayout> -->
 </template>
 <style lang="scss" module>
 .iiemo_about {
