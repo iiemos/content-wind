@@ -1,6 +1,16 @@
 @import 'element-plus/dist/index.css';
 @import './monokai.scss';
 
+.dark {
+  --themeBgcolor: #1D1D1D;
+  --themeTextColor: #FFFFFF;
+  --themeCodeBgColor: #ffffff3b;
+  --themeMarkdownColor: #FFFFFF;
+  --themeMarkBgdownColor: #ffffff3b;
+  --themeMarkdownBorderColor: #a2a2a2;
+  --themeBannerColor: #1D1D1D;
+}
+
 html,
 body,
 #app {
@@ -11,36 +21,19 @@ body,
 }
 
 @font-face {
-  font-family: 'Dosis';
-  src: url('@/assets/font/Dosis.woff2');
+  font-family: "Dosis";
+  src: url("@/assets/font/Dosis.woff2");
 }
-.dark body,
-body {
-  --tw-bg-opacity: 1;
-}
-.dark body {
-  color: #fff;
-  background-color: rgb(17 24 39 / var(--tw-bg-opacity));
-}
-.dark .dark\:bg-primary-800 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(31 41 55 / var(--tw-bg-opacity));
-}
-.el-timeline-item__content,
-.el-timeline-item__timestamp {
-  color: inherit;
-  opacity: 0.9;
-}
+
 html,
 body {
+  color: $themeTextColor;
+  background-color: $themeBgcolor;
+
   #banner_canvas {
-    // background: linear-gradient($themeBannerColor, #fffffb);
+    background: linear-gradient($themeBannerColor, #fffffb);
   }
 
-  pre {
-    code {
-    }
-  }
 
   ._markdown_body {
     color: $themeTextColor;
@@ -48,10 +41,10 @@ body {
     line-height: 30px;
     letter-spacing: 2px;
     word-break: break-word;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+      Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif;
     scroll-behavior: smooth;
-    background-image: linear-gradient(
-        0deg,
+    background-image: linear-gradient(0deg,
         transparent 24%,
         rgba(201, 195, 195, 0.329) 25%,
         hsla(0, 8%, 80.4%, 0.05) 26%,
@@ -60,10 +53,8 @@ body {
         hsla(0, 5.2%, 81%, 0.185) 75%,
         rgba(180, 176, 176, 0.05) 76%,
         transparent 77%,
-        transparent
-      ),
-      linear-gradient(
-        90deg,
+        transparent),
+      linear-gradient(90deg,
         transparent 24%,
         rgba(204, 196, 196, 0.226) 25%,
         hsla(0, 4%, 66.1%, 0.05) 26%,
@@ -72,8 +63,7 @@ body {
         hsla(0, 5.2%, 81%, 0.185) 75%,
         rgba(180, 176, 176, 0.05) 76%,
         transparent 77%,
-        transparent
-      );
+        transparent);
     // background-color: $themeBgcolor;
     background-size: 50px 50px;
     padding-bottom: 60px;
@@ -98,7 +88,7 @@ body {
       font-size: 1.4em;
     }
 
-    h1 ~ p:first-of-type:first-letter {
+    h1~p:first-of-type:first-letter {
       color: $themeMarkdownColor;
       float: left;
       font-size: 2em;
@@ -185,7 +175,7 @@ body {
     }
 
     a:after {
-      content: '';
+      content: "";
       position: absolute;
       width: 98%;
       height: 1px;
@@ -231,7 +221,7 @@ body {
       background-color: $themeMarkdownBgColor;
     }
 
-    blockquote > p {
+    blockquote>p {
       margin: 0;
     }
 
@@ -242,26 +232,50 @@ body {
       background-color: $themeMarkdownBgColor;
     }
 
-    .math > p {
+    .math>p {
       margin: 0;
-    }
-
-    code {
-      padding: 2px 0.4em;
-      overflow-x: auto;
-      color: $themeMarkdownColor;
-      font-weight: 700;
-      word-break: break-word;
-      font-family: Operator Mono, Consolas, Monaco, Menlo, monospace;
-      background-color: $themeCodeBgColor;
-      // background-color: #8b8a8a;
     }
 
     pre {
       margin: 2em 0;
+
+      code {
+        padding: 2px 0.4em;
+        overflow-x: auto;
+        color: $themeMarkdownColor;
+        font-weight: 700;
+        word-break: break-word;
+        font-family: Operator Mono, Consolas, Monaco, Menlo, monospace;
+        background-color: $themeCodeBgColor;
+        position: relative;
+        padding-top: 3.5rem !important;
+
+        &::after {
+          position: absolute;
+          left: 0rem;
+          top: 0rem;
+          width: 100%;
+          height: 32px;
+          background: #cccccc4a;
+          content: " ";
+        }
+
+        &::before {
+          position: absolute;
+          z-index: 1;
+          left: 0.7rem;
+          top: 0.7rem;
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          background: #fc625d;
+          box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
+          content: " ";
+        }
+      }
     }
 
-    pre > code {
+    pre>code {
       display: block;
       padding: 1.5em;
       word-break: normal;
@@ -276,16 +290,16 @@ body {
       box-shadow: 0 0 10px $themeMarkdownBorderColor;
     }
 
-    pre > code:hover {
+    pre>code:hover {
       box-shadow: 0 0 20px $themeMarkdownBorderColor;
     }
 
-    pre > code::-webkit-scrollbar {
+    pre>code::-webkit-scrollbar {
       height: 6px;
       background-color: $themeMarkdownBgColor;
     }
 
-    pre > code::-webkit-scrollbar-thumb {
+    pre>code::-webkit-scrollbar-thumb {
       background-color: $themeMarkdownBorderColor;
       border-bottom-left-radius: 3px;
       border-bottom-right-radius: 3px;
@@ -324,11 +338,11 @@ body {
 ::-webkit-scrollbar {
   width: 6px;
   height: 1px;
-  background-color: #f1f1f1;
+  background-color: #F1F1F1;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #c1c1c1;
+  background-color: #C1C1C1;
 }
 
 .listLeftIn {
@@ -343,87 +357,87 @@ body {
   }
 
   &:nth-child(3) {
-    animation-delay: 0.1s;
+    animation-delay: .1s;
   }
 
   &:nth-child(4) {
-    animation-delay: 0.15s;
+    animation-delay: .15s;
   }
 
   &:nth-child(5) {
-    animation-delay: 0.2s;
+    animation-delay: .2s;
   }
 
   &:nth-child(6) {
-    animation-delay: 0.25s;
+    animation-delay: .25s;
   }
 
   &:nth-child(7) {
-    animation-delay: 0.3s;
+    animation-delay: .3s;
   }
 
   &:nth-child(8) {
-    animation-delay: 0.35s;
+    animation-delay: .35s;
   }
 
   &:nth-child(9) {
-    animation-delay: 0.4s;
+    animation-delay: .4s;
   }
 
   &:nth-child(10) {
-    animation-delay: 0.45s;
+    animation-delay: .45s;
   }
 
   &:nth-child(11) {
-    animation-delay: 0.5s;
+    animation-delay: .5s;
   }
 
   &:nth-child(12) {
-    animation-delay: 0.55s;
+    animation-delay: .55s;
   }
 
   &:nth-child(13) {
-    animation-delay: 0.6s;
+    animation-delay: .6s;
   }
 
   &:nth-child(14) {
-    animation-delay: 0.65s;
+    animation-delay: .65s;
   }
 
   &:nth-child(15) {
-    animation-delay: 0.7s;
+    animation-delay: .7s;
   }
 
   &:nth-child(16) {
-    animation-delay: 0.75s;
+    animation-delay: .75s;
   }
 
   &:nth-child(17) {
-    animation-delay: 0.8s;
+    animation-delay: .8s;
   }
 
   &:nth-child(18) {
-    animation-delay: 0.85s;
+    animation-delay: .85s;
   }
 
   &:nth-child(19) {
-    animation-delay: 0.9s;
+    animation-delay: .9s;
   }
 
   &:nth-child(20) {
-    animation-delay: 0.95s;
+    animation-delay: .95s;
   }
 }
 
 @keyframes listLeftIn {
   0% {
     transform: translateX(-50px);
-    opacity: 0;
+    opacity: 0
   }
 
   100% {
     transform: translateX(0);
-    opacity: 1;
+    opacity: 1
   }
 }
 

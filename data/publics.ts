@@ -11,6 +11,30 @@ export default {
       { name: 'Emoji', icon: '😳', link: '/emoji.html' },
     ],
     isShowAnimation: true,
+    themesColors: {
+      'light':{
+        name: '星空白',
+        code: 'light',
+        bgColor: '#FFFFFF',
+        textColor: '#000000',
+        codeColor: '#f8f8f8',
+        mdColor: '#35cb00',
+        mdBgColor: '#daf5d0',
+        mdBorderColor: '#b0f895',
+        bannerColor: '#D3F2C8',
+      },
+      'dark':{
+        name: '午夜黑',
+        code: 'dark',
+        bgColor: '#1D1D1D',
+        textColor: '#FFFFFF',
+        codeColor: '#ffffff3b',
+        mdColor: '#ffffff',
+        mdBgColor: '#ffffff3b',
+        mdBorderColor: '#a2a2a2',
+        bannerColor: '#1D1D1D',
+      },
+    },
     themes: [
       {
         name: '星空白',

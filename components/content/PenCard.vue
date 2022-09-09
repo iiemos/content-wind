@@ -1,6 +1,9 @@
 <script setup lang="ts">
 // import { ElPagination } from 'element-plus'
+import { ElSwitch } from 'element-plus'
 import { randomColor } from '@/utlis/global'
+import MenuIcon from '@/components/icon/MenuIcon.vue'
+import ListIcon from '@/components/icon/ListIcon.vue'
 const isHorizontal: any = ref(false)
 const isAnimation: any = ref(false)
 const { data } = await useAsyncData(() => queryContent('/').find())
@@ -23,6 +26,14 @@ data.value.forEach((i) => {
 
 <template>
   <div class="">
+    <div :class="$style['content_head']" class="container mx-auto mb-6 px-6 mt-10">
+      <h5 class="text-xl fw-600">
+        全部文章 <span class="text-sm ml-1">({{ types.length }})</span>
+      </h5>
+      <div :class="$style['content_switch']">
+        <el-switch v-model="isHorizontal" size="default" :active-icon="ListIcon" :inactive-icon="MenuIcon" style="--el-switch-on-color: #13ce66" />
+      </div>
+    </div>
     <div :class="$style['home_type']" class="container mx-auto mb-6">
       <!-- <nuxt-link v-for="(item) in typeList" :key="item.id" :class="$style['home_type_item']" to="/categories.html" class="py-4">
           {{ item.id }}
@@ -71,6 +82,20 @@ data.value.forEach((i) => {
 </template>
 
 <style lang="scss" module>
+.content_head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  h5 {
+    display: flex;
+    align-items: baseline;
+  }
+}
+@media screen and (max-width: 768px) {
+  .content_switch {
+    display: none;
+  }
+}
 .home_type {
   width: 100%;
   display: flex;
